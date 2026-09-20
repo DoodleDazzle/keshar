@@ -31,7 +31,7 @@ export function ProjectCard({
         href={href}
         className="group relative block overflow-hidden rounded-2xl shadow-lift"
       >
-        <div className="aspect-[4/3] overflow-hidden bg-[#1a1a1a]">
+        <div className="aspect-[4/3] overflow-hidden bg-[var(--card-surface)]">
           <PlaceholderImage
             src={image}
             label={title.toUpperCase()}

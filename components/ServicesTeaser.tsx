@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { services } from "@/content/site";
 import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { Reveal } from "@/components/Reveal";
@@ -10,6 +11,7 @@ import { Marquee } from "@/components/Marquee";
 
 export function ServicesTeaser() {
   const [open, setOpen] = useState(0);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   return (
     <>
@@ -31,7 +33,11 @@ export function ServicesTeaser() {
       <SectionFrame>
         {services.map((s, i) => (
           <Reveal key={s.id} delay={i * 0.08}>
-            <div className="grid items-center gap-6 md:grid-cols-[1fr_220px]">
+            <div
+              className="relative grid items-center gap-6 md:grid-cols-[1fr_220px]"
+              onMouseEnter={() => setHovered(i)}
+              onMouseLeave={() => setHovered((current) => (current === i ? null : current))}
+            >
               <AccordionItem
                 index={s.id}
                 title={s.title}
@@ -42,12 +48,46 @@ export function ServicesTeaser() {
                 {s.description}
               </AccordionItem>
               {open === i ? (
-                <div className="mb-6 h-40 overflow-hidden rounded-2xl">
-                  <PlaceholderImage src={s.image} label={s.title} />
+                <div className="mb-6 aspect-[4/3] w-full overflow-hidden rounded-2xl md:max-w-[220px]">
+                  <PlaceholderImage src={s.image} label={s.title} showLabel={false} />
                 </div>
               ) : (
                 <div className="hidden md:block" />
               )}
+
+              <div className="pointer-events-none absolute right-16 top-1/2 hidden h-24 w-24 -translate-y-1/2 md:block">
+                <PlaceholderImage
+                  label={s.title}
+                  showLabel={false}
+                  className="rounded-xl text-transparent"
+                />
+
+                <AnimatePresence>
+                  {hovered === i && s.icon ? (
+                    <motion.img
+                      key={s.icon}
+                      src={s.icon}
+                      alt=""
+                      aria-hidden
+                      initial={{ opacity: 0, scale: 0.6, y: 24, rotate: -10 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        rotate: -6,
+                        y: [0, -6, 0],
+                      }}
+                      exit={{ opacity: 0, scale: 0.6, y: 24, rotate: -10 }}
+                      transition={{
+                        opacity: { duration: 0.25 },
+                        scale: { type: "spring", stiffness: 260, damping: 20 },
+                        rotate: { type: "spring", stiffness: 260, damping: 20 },
+                        y: { duration: 1.6, repeat: Infinity, ease: "easeInOut" },
+                      }}
+                      className="absolute inset-0 h-full w-full object-contain drop-shadow-xl"
+                    />
+                  ) : null}
+                </AnimatePresence>
+              </div>
             </div>
           </Reveal>
         ))}

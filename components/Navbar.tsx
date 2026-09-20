@@ -69,8 +69,8 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 md:block">
-            <div className="flex items-center gap-3 md:gap-4">
+          <div className="absolute inset-x-0 top-1/2 hidden -translate-y-1/2 md:block">
+            <div className="relative flex items-center justify-center gap-3 md:gap-4">
               <Link
                 href="/projects"
                 className={cn(
@@ -96,7 +96,8 @@ export function Navbar() {
                 />
                 <motion.div
                   layoutId="nav-badge"
-                  className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-black text-white shadow-[0_0_0_1px_rgba(255,255,255,0.10)]"
+                  className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full text-white shadow-[0_0_0_1px_rgba(255,255,255,0.10)]"
+                  style={{ backgroundColor: accent.glow }}
                   transition={{ duration: 0.3 }}
                 >
                   <BadgeIcon icon={accent.icon} />

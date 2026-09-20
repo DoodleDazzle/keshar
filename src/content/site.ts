@@ -240,6 +240,7 @@ export const services = [
       "Landing Pages",
     ],
     image: images.services[0].image,
+    icon: "/images/icons/web-design.png",
   },
   {
     id: "02",
@@ -249,6 +250,7 @@ export const services = [
       "I'll design a unique brand identity that makes you memorable and connects with your audience.",
     tags: ["Logo Design", "Brand Guidelines", "Color & Typography", "Business Cards"],
     image: images.services[1].image,
+    icon: "/images/icons/branding.png",
   },
   {
     id: "03",
@@ -263,6 +265,7 @@ export const services = [
       "Prototype Development",
     ],
     image: images.services[2].image,
+    icon: "/images/icons/product-design.png",
   },
   {
     id: "04",
@@ -277,6 +280,7 @@ export const services = [
       "Print Design",
     ],
     image: images.services[3].image,
+    icon: "/images/icons/graphics-design.png",
   },
 ];
 

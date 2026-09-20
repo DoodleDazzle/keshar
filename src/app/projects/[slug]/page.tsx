@@ -62,7 +62,7 @@ export default async function ProjectDetailPage({
           </div>
 
           <div className="flex items-center p-6 md:p-10 lg:p-14">
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-[2rem] bg-[#1a1a1a]">
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-[2rem] bg-[var(--card-surface)]">
               <PlaceholderImage src={project.image} label={project.title} className="h-full w-full object-cover" />
             </div>
           </div>
@@ -111,7 +111,7 @@ export default async function ProjectDetailPage({
               key={`${project.slug}-gallery-${index}`}
               className={index === 0 ? "aspect-[16/9] md:col-span-2" : "aspect-[4/3]"}
             >
-              <div className="h-full overflow-hidden rounded-3xl bg-[#1a1a1a]">
+              <div className="h-full overflow-hidden rounded-3xl bg-[var(--card-surface)]">
                 <PlaceholderImage src={image} label={`${project.title} ${index + 1}`} className="object-cover" />
               </div>
             </div>

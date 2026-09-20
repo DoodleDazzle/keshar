@@ -44,8 +44,12 @@ export function About() {
           <h2 className="font-display text-5xl text-white md:text-7xl">ABOUT ME</h2>
           <div className="lg:sticky lg:top-24 lg:self-start w-full flex justify-center">
             <div className="relative mt-8 w-full max-w-md overflow-hidden rounded-3xl bg-white">
-              <div className="aspect-square">
-                <PlaceholderImage src={images.aboutImage} label="ABOUT" />
+              <div className="aspect-[4/3]">
+                <PlaceholderImage
+                  src={images.aboutImage}
+                  video={images.heroAvatarVideo}
+                  label="ABOUT"
+                />
               </div>
               <span className="absolute right-6 top-8 rounded-2xl bg-black px-4 py-2 text-sm text-white">
                 {bubbles.about}
