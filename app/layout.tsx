@@ -16,7 +16,7 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Dean — UI Designer Portfolio",
+  title: "Keshar - UI Designer Portfolio",
   description:
     "Black and white UI designer portfolio. Fast, user-friendly product design for founders and teams.",
   icons: {
