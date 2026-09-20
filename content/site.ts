@@ -53,7 +53,7 @@ export const pageAccent: Record<
 };
 
 export const site = {
-  name: "Dean",
+  name: "Keshar",
   roleLeft: "UI",
   roleRight: "DESIGNER",
   city: "Miami",
@@ -62,7 +62,7 @@ export const site = {
   email: "contact@ace.com",
   phone: "+1 (555) 123-4567",
   madeIn: "Next.js",
-  copyright: "© 2026 Dean. All rights reserved.",
+  copyright: "© 2026 Keshar. All rights reserved.",
 };
 
 export const hero = {

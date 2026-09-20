@@ -2,7 +2,7 @@ import { AboutLists } from '@/components/AboutLists'
 
 function CharacterAnimation({ className }: { className: string }) {
   return (
-    <div className={className} role="img" aria-label="Animated illustration of Dean">
+    <div className={className} role="img" aria-label="Animated illustration of Keshar">
       <video autoPlay loop muted playsInline className="character-video" aria-hidden="true">
         <source src="/her-animation.mp4" type="video/mp4" />
       </video>
